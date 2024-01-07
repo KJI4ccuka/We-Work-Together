@@ -1,6 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Montserrat:wght@700&display=swap");
-/* Обнуление */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600;700;800;900&family=Barlow:wght@300;400;500;600;700;800&family=Montserrat:wght@700&display=swap"); /* Обнуление */
 *,
 *::before,
 *::after {
@@ -94,6 +93,12 @@ ul li {
   border-radius: 30px;
   padding: 5px 40px 5px;
   color: white;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.Button:hover {
+  background-color: #FF4861;
+  transform: scale(1.05); /* Пример увеличения размера элемента при наведении */
 }
 
 .Text {
@@ -119,6 +124,7 @@ ul li {
 }
 
 .Description {
+  font-family: Barlow;
   line-height: 30px;
   font-size: 18px;
   color: #171B2A;
@@ -134,8 +140,20 @@ header {
   padding: 20px 10px;
   color: #fff;
   z-index: 1000;
+  opacity: 0; /* начальная прозрачность */
+  animation: fadeInHeader 0.8s ease forwards; /* анимация для появления */
 }
 
+@keyframes fadeInHeader {
+  from {
+    opacity: 0;
+    transform: translateY(-50px); /* начальное смещение вверх */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .logo {
   height: 68px;
   width: 225px;
@@ -254,29 +272,34 @@ header {
 .mainText {
   padding-top: 220px;
   padding-bottom: 35px;
-  padding-left: 15px;
+  padding-left: 74px;
+}
+.mainText p {
+  line-height: normal;
 }
 
 .mainTitle {
-  width: 37.375rem;
+  width: 42rem;
+  letter-spacing: 0;
 }
 
 .mainSubtitle::after {
   position: absolute;
   content: "";
-  top: -17px;
+  top: -20px;
   left: 0;
-  width: 45px;
-  height: 2.5px;
+  width: 50px;
+  height: 3px;
   border-radius: 30px;
   background-color: black;
 }
 
 .mainDescription {
   max-width: 400px;
+  font-size: 34px;
 }
 
-.bgcImage img {
+.bgcImage video {
   z-index: -1;
   width: 100%;
   height: 100%;
@@ -300,8 +323,8 @@ header {
   margin-top: -25px;
   padding: 50px 55px;
   background-image: url("../Images/MainIMG/mainImages/bgcItem.png");
-  background-repeat: no-repeat;
-  background-color: rgb(27, 76, 184);
+  background-repeat: repeat;
+  background-color: #1b4cb8;
   width: 83%;
   height: 190px;
 }
@@ -317,6 +340,7 @@ header {
   background-color: #a1b5e2;
 }
 .mainItem .items p {
+  font-family: Barlow, serif;
   padding-top: 16px;
   max-width: 220px;
   font-weight: 300;
@@ -345,11 +369,13 @@ header {
     background-position: center;
     width: 100%;
     color: white;
+    padding-left: 30px;
   }
   .mainText .mainTitle {
     position: relative;
     color: white;
     z-index: 3;
+    width: 100%;
   }
   .mainText p {
     position: relative;
@@ -369,7 +395,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 80%;
     background-color: rgba(0, 0, 0, 0.2); /* Замените цвет и прозрачность по желанию */
     z-index: 0; /* Перекрывает фоновое изображение, но остается под контентом */
   }
@@ -386,14 +412,19 @@ header {
   }
 }
 @media only screen and (max-width: 750px) {
+  .mainText {
+    padding-left: 10px;
+  }
   .mainText h2 {
     font-size: 32px;
   }
   .mainText h1 {
-    font-size: 67px;
+    max-width: 500px;
+    font-size: 46px;
     margin-bottom: 20px;
   }
   .mainText p {
+    font-size: 32px;
     margin-bottom: 40px;
   }
   .mainItem {
@@ -416,9 +447,19 @@ header {
 }
 
 .aboutText {
-  padding-left: 90px;
+  padding-left: 190px;
 }
 
+@media only screen and (max-width: 1300px) {
+  .aboutText {
+    padding-left: 100px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .aboutText {
+    padding-left: 70px;
+  }
+}
 .aboutTitle {
   position: relative;
   font-size: 65px;
@@ -426,10 +467,10 @@ header {
 .aboutTitle::after {
   position: absolute;
   content: "";
-  top: -17px;
+  top: -20px;
   left: 0;
   width: 45px;
-  height: 2.5px;
+  height: 3px;
   border-radius: 30px;
   background-color: black;
 }
@@ -537,6 +578,7 @@ header {
   background-color: black;
 }
 .item p {
+  font-family: Barlow, serif;
   font-size: 18px;
   line-height: 22px;
   color: #282728;
@@ -627,12 +669,12 @@ header {
 }
 .visionWrap {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
 .visionImage {
   padding: 0 0 50px 50px;
-  flex: 1 1 auto;
 }
 .visionImage img {
   min-height: 400px;
@@ -644,9 +686,6 @@ header {
   padding-top: 60px;
   padding-left: 100px;
 }
-.visionText .visionDescription {
-  line-height: 25px;
-}
 .visionText h2 {
   position: relative;
 }
@@ -654,9 +693,9 @@ header {
   position: absolute;
   content: "";
   left: 0;
-  top: -15px;
+  top: -25px;
   width: 55px;
-  height: 1px;
+  height: 3px;
   background-color: black;
 }
 .visionText p {
@@ -696,7 +735,7 @@ header {
   }
 }
 .blogWrap {
-  padding: 120px 60px 100px;
+  padding: 120px 30px 100px;
 }
 
 .blogItemsWrap1, .blogItemsWrap2 {
@@ -740,8 +779,11 @@ header {
 }
 
 .blogItem {
-  display: flex;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.blogItem:hover {
+  transform: scale(1.05);
 }
 
 .blogText {
@@ -849,7 +891,7 @@ header {
   }
 }
 .contactForm {
-  padding-left: 100px;
+  padding-left: 190px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
@@ -867,9 +909,9 @@ header {
   position: absolute;
   content: "";
   left: 0;
-  top: -10px;
-  width: 50px;
-  height: 1px;
+  top: -25px;
+  width: 55px;
+  height: 3px;
   background-color: #191919;
 }
 
@@ -878,18 +920,6 @@ header {
   position: relative;
   grid-template-columns: 1fr;
   gap: 10px;
-}
-.contactInput:after {
-  content: url("../Images/MainIMG/contactImages/contactIconFacebook.png");
-  position: absolute;
-  bottom: 8px;
-  right: 40px;
-}
-.contactInput:before {
-  content: url("../Images/MainIMG/contactImages/contactIconYoutube.png");
-  position: absolute;
-  bottom: 8px;
-  right: 0;
 }
 .contactInput label {
   font-size: 18px;
@@ -903,7 +933,7 @@ header {
   border-bottom: #c8c8c8 1px solid;
   margin-bottom: 5px;
   padding: 5px;
-  width: 100%;
+  width: 400px;
   box-sizing: border-box;
 }
 .contactInput button {
@@ -944,6 +974,16 @@ header {
   }
 }
 
+@media screen and (max-width: 1300px) {
+  .contactForm {
+    padding-left: 100px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .contactForm {
+    padding-left: 50px;
+  }
+}
 input,
 textarea {
   width: 100%;
@@ -956,7 +996,8 @@ textarea {
 
 @media only screen and (max-width: 1024px) {
   .contactForm {
-    padding-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .contactWrap {
     flex-wrap: wrap;
@@ -968,6 +1009,9 @@ textarea {
   }
 }
 @media only screen and (max-width: 640px) {
+  .contactForm .contactInput input, .contactForm textarea {
+    width: 300px;
+  }
   .contactForm h2 {
     font-size: 67px;
   }
@@ -983,6 +1027,36 @@ textarea {
     background-position: center;
   }
 }
+.powerby {
+  padding-right: 150px;
+}
+
+@media (max-width: 1300px) {
+  .powerby {
+    padding-right: 100px;
+  }
+}
+@media (max-width: 1100px) {
+  .powerbyWrap {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .powerby {
+    padding-right: 0;
+  }
+}
+@media (max-width: 960px) {
+  .powerbyWrap {
+    justify-content: center;
+  }
+  .powerby {
+    padding-right: 0;
+  }
+}
+.footerWrap {
+  align-items: center;
+}
+
 footer {
   color: #787a8d;
   padding: 70px 60px 35px;
@@ -997,6 +1071,10 @@ footer .footerLine {
 footer .logo p {
   font-size: 16px;
   line-height: normal;
+}
+
+.footerLogo {
+  padding-right: 18%;
 }
 
 .footerCopy {
@@ -1015,6 +1093,13 @@ footer .logo p {
   .footerNavigate {
     flex-wrap: wrap;
     gap: 0;
+  }
+  .footerWrap {
+    justify-content: space-between;
+    align-items: start;
+  }
+  .footerLogo {
+    padding-right: 30px;
   }
   .menuItem {
     flex: 0 0 30%;
