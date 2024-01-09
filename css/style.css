@@ -229,6 +229,7 @@ header {
   display: flex;
 }
 .mainMenu ul li {
+  color: #191919;
   font-size: 20px;
   font-weight: 400;
   transition: transform 0.3s ease;
@@ -674,15 +675,16 @@ header {
 }
 
 .visionImage {
-  padding: 0 0 50px 50px;
+  padding: 0 0 50px 85px;
 }
 .visionImage img {
+  width: 700px;
   min-height: 400px;
   min-width: 480px;
 }
 
 .visionText {
-  max-width: 800px;
+  max-width: 700px;
   padding-top: 60px;
   padding-left: 100px;
 }
@@ -702,7 +704,7 @@ header {
   margin-bottom: 50px;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1100px) {
   .visionWrap {
     flex-wrap: wrap;
     justify-content: center;
