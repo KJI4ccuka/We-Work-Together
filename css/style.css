@@ -177,7 +177,9 @@ header {
 .hamburger-icon {
   display: none;
   cursor: pointer;
-  padding: 10px;
+  padding: 12px 15px;
+  border-radius: 30px;
+  background-color: #1a1b2d;
   position: relative;
   z-index: 2;
 }
@@ -194,7 +196,7 @@ header {
   transition: transform 0.3s ease;
 }
 
-@media only screen and (max-width: 1124px) {
+@media only screen and (max-width: 1240px) {
   .hamburger-icon {
     display: block;
   }
@@ -229,7 +231,7 @@ header {
   display: flex;
 }
 .mainMenu ul li {
-  color: #191919;
+  color: white;
   font-size: 20px;
   font-weight: 400;
   transition: transform 0.3s ease;
@@ -270,12 +272,12 @@ header {
   color: #DE2441;
 }
 
-.mainText {
+.mainText, .videoAdaptive {
   padding-top: 220px;
   padding-bottom: 35px;
   padding-left: 74px;
 }
-.mainText p {
+.mainText p, .videoAdaptive p {
   line-height: normal;
 }
 
@@ -295,12 +297,59 @@ header {
   background-color: black;
 }
 
+.videoAdaptive {
+  display: none;
+}
+
 .mainDescription {
   max-width: 400px;
   font-size: 34px;
 }
 
+.bgcImage {
+  position: relative;
+}
+.bgcImage::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url("../Images/MainIMG/Rectangle 5 copy.png");
+  width: 100%;
+  height: 1000px;
+  background-repeat: no-repeat;
+}
+.bgcImage::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-image: url("../Images/MainIMG/israel-flag-is-depicted-liquid-watercolor-style-isolated-white.png");
+  width: 1170px;
+  height: 600px;
+  background-size: contain;
+}
+.bgcImage .muteButton {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  padding-bottom: 14px;
+  justify-content: center;
+  background-image: url("../Images/MainIMG/RectangleRed.png");
+  left: 0;
+  bottom: 0;
+  width: 130px;
+  height: 130px;
+}
+.bgcImage .muteButton img {
+  padding: 5px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+}
 .bgcImage video {
+  position: relative;
   z-index: -1;
   width: 100%;
   height: 100%;
@@ -308,6 +357,15 @@ header {
   object-fit: cover;
 }
 
+@media (max-width: 1200px) {
+  .bgcImage {
+    position: relative;
+  }
+  .bgcImage::before {
+    width: 1160px;
+    height: 586px;
+  }
+}
 .mainItemWrap {
   display: flex;
   justify-content: end;
@@ -318,7 +376,7 @@ header {
   position: relative;
   left: 0;
   top: 0;
-  z-index: 3;
+  z-index: 13;
   display: flex;
   gap: 40px;
   margin-top: -25px;
@@ -353,6 +411,10 @@ header {
   display: flex;
 }
 
+.muteButtonAdaptive {
+  display: none;
+}
+
 @media only screen and (max-width: 1200px) {
   .items::after {
     display: none;
@@ -361,13 +423,34 @@ header {
     width: 100%;
     margin-top: 0;
   }
+  .muteButtonAdaptive {
+    display: block;
+    padding-left: 25px;
+  }
+  .muteButtonAdaptive img {
+    width: 30px;
+    height: 30px;
+  }
 }
 @media only screen and (max-width: 1024px) {
+  .videoAdaptive {
+    display: block;
+    position: absolute;
+    top: -250px;
+    left: -100px;
+    overflow: hidden;
+  }
+  .videoAdaptive video {
+    width: 1300px;
+    height: 800px;
+    object-fit: cover;
+  }
   .mainText {
-    background-image: url("../Images/MainIMG/mainImages/bgcImage.png");
-    background-repeat: no-repeat;
+    background: url("../video/videoBgc.mp4") no-repeat center center fixed;
     background-size: cover;
-    background-position: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
     width: 100%;
     color: white;
     padding-left: 30px;
@@ -381,11 +464,11 @@ header {
   .mainText p {
     position: relative;
     color: white;
-    z-index: 2;
+    z-index: 3;
   }
   .mainText button {
     position: relative;
-    z-index: 2;
+    z-index: 3;
   }
   .mainText .mainSubtitle::after {
     background-color: white;
@@ -396,12 +479,27 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 80%;
-    background-color: rgba(0, 0, 0, 0.2); /* Замените цвет и прозрачность по желанию */
-    z-index: 0; /* Перекрывает фоновое изображение, но остается под контентом */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 0;
   }
   .bgcImage {
     display: none;
+  }
+  .mainText::before,
+  .mainText video {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+  }
+  .mainText video {
+    z-index: 3;
   }
   .mainItem {
     flex-wrap: wrap;
@@ -413,6 +511,9 @@ header {
   }
 }
 @media only screen and (max-width: 750px) {
+  .videoAdaptive video {
+    width: 800px;
+  }
   .mainText {
     padding-left: 10px;
   }
@@ -436,10 +537,20 @@ header {
   }
 }
 @media only screen and (max-width: 425px) {
+  .videoAdaptive video {
+    width: 500px;
+    height: 700px;
+  }
   .mainText h1 {
     width: 100%;
     font-size: 50px;
     margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .videoAdaptive video {
+    width: 350px;
+    height: 800px;
   }
 }
 .aboutWrap {

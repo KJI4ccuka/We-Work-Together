@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -37,27 +38,42 @@
 </header>
 <main>
     <section class="pb-[120px] max-md:pb-[80px]" id="mainSection">
-        <div class="flex">
-            <div class="mainText">
-                <h2 class="mainSubtitle Subtitle">
-                </h2>
+        <div class="flex relative">
+            <div class="mainText" id="mainText">
+                <h2 class="mainSubtitle Subtitle"></h2>
                 <h1 class="mainTitle Title uppercase">
                     Building Bridges of Understanding
                 </h1>
-                <p class="mainDescription Description uppercase ">
+                <p class="mainDescription Description uppercase">
                     Strengthening the Israel-US Bond Through Education
                 </p>
-                <button class="mainButton Button">
-                    READ MORE
-                </button>
+                <div class="flex items-center">
+                    <button class="mainButton Button">
+                        READ MORE
+                    </button>
+                    <div class="muteButtonAdaptive" onclick="toggleMute()">
+                        <img id="muteIconAdaptive" src="./Images/MainIMG/unmuteButton.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+            <div class="videoAdaptive">
+                <video muted autoplay loop id="backgroundVideo">
+                    <source src="./video/videoBgc.mp4" type="video/mp4">
+                </video>
             </div>
             <div class="bgcImage">
-                <video autoplay muted loop id="myVideo">
-                    <source src="./video/copy_1DC2A088-69DD-4EBC-B2B0-D400A5BE87B1%20(1).mp4" type="video/mp4">
+                <div class="muteButton" onclick="toggleMute()">
+                    <img id="muteIcon" src="./Images/MainIMG/unmuteButton.png" alt="Mute Button">
+                </div>
+                <video muted autoplay loop id="myVideo">
+                    <source src="./video/videoBgc.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
         </div>
+
+
         <div class="mainItemWrap">
             <div class="mainItem">
                 <div class="items">
@@ -505,8 +521,16 @@
         </div>
     </div>
 </footer>
-
 <script src="./js/menu.js"></script>
+<script src="js/mainAnimation.js"></script>
+<script src="js/video.js"></script>
+
+<script src="js/aboutAnimation.js"></script>
+<script src="js/blogAnimation.js"></script>
+<script src="js/itemsAnimation.js"></script>
+<script src="js/visionAnimation.js"></script>
+<script src="js/contactAnimation.js"></script>
+
 
 </body>
 </html>
