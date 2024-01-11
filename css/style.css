@@ -128,6 +128,7 @@ ul li {
   line-height: 30px;
   font-size: 18px;
   color: #171B2A;
+  font-weight: 300;
   font-style: normal;
   margin-bottom: 70px;
 }
@@ -588,15 +589,22 @@ header {
 }
 
 .aboutDescription {
-  max-width: 410px;
+  margin-right: -280px;
+  padding-right: 10px;
   margin-bottom: 50px;
 }
 
+@media only screen and (max-width: 1664px) {
+  .aboutDescription {
+    max-width: 410px;
+    margin-right: 0;
+  }
+}
 .aboutImage {
   max-width: 60%;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1124px) {
   .aboutWrap {
     flex-wrap: wrap;
     justify-content: center;
@@ -690,6 +698,7 @@ header {
   background-color: black;
 }
 .item p {
+  font-weight: 300;
   font-family: Barlow, serif;
   font-size: 18px;
   line-height: 22px;
@@ -781,6 +790,7 @@ header {
 }
 .visionWrap {
   display: flex;
+  max-width: 1700px;
   align-items: center;
   justify-content: space-between;
 }
@@ -812,6 +822,7 @@ header {
   background-color: black;
 }
 .visionText p {
+  max-width: 650px;
   margin-bottom: 50px;
 }
 
@@ -903,6 +914,7 @@ header {
   width: 470px;
 }
 .blogText h2 {
+  margin-bottom: 30px;
   font-size: 67px;
   font-weight: 800;
   color: white;
@@ -919,8 +931,7 @@ header {
 }
 .blogText p {
   color: white;
-  max-width: 320px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 200;
   margin-bottom: 50px;
 }
@@ -1004,7 +1015,7 @@ header {
   }
 }
 .contactForm {
-  padding-left: 190px;
+  padding-left: 180px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
@@ -1078,7 +1089,7 @@ header {
   background-image: url("../Images/MainIMG/contactImages/israel-flag-with-waving-flag.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  width: 50vw;
+  width: 57vw;
   height: 100%;
 }
 @media screen and (max-width: 1300px) {

@@ -1,9 +1,20 @@
-var isMuted = false;
+let isMuted = false;
 
-var myVideo = document.getElementById("myVideo");
-var backgroundVideo = document.getElementById("backgroundVideo");
-var muteIcon = document.getElementById("muteIcon");
-var muteIconAdaptive = document.getElementById("muteIconAdaptive");
+document.addEventListener("DOMContentLoaded", function () {
+    const backgroundVideo = document.getElementById("backgroundVideo");
+    backgroundVideo.play();
+});
+
+function startVideos() {
+    const backgroundVideo = document.getElementById("backgroundVideo");
+    const myVideo = document.getElementById("myVideo");
+    // Добавьте код для запуска видео, если необходимо
+}
+
+const myVideo = document.getElementById("myVideo");
+const backgroundVideo = document.getElementById("backgroundVideo");
+const muteIcon = document.getElementById("muteIcon");
+const muteIconAdaptive = document.getElementById("muteIconAdaptive");
 
 function toggleMute() {
     isMuted = !isMuted;
@@ -11,14 +22,6 @@ function toggleMute() {
     myVideo.muted = isMuted;
     backgroundVideo.muted = isMuted;
 
-    if (isMuted) {
-        muteIcon.src = "./Images/MainIMG/unmuteButton.png";
-    } else {
-        muteIcon.src = "./Images/MainIMG/muteButton.png";
-    }
-    if (isMuted) {
-        muteIconAdaptive.src = "./Images/MainIMG/unmuteButton.png";
-    } else {
-        muteIconAdaptive.src = "./Images/MainIMG/muteButton.png";
-    }
+    muteIcon.src = `./Images/MainIMG/${isMuted ? "unmuteButton" : "muteButton"}.png`;
+    muteIconAdaptive.src = `./Images/MainIMG/${isMuted ? "unmuteButton" : "muteButton"}.png`;
 }

@@ -671,12 +671,15 @@ header {
 
   }
 
-  .Title {
+  .numberText {
     position: relative;
-    padding-bottom: 40px;
+    padding-top: 30px;
     text-align: center;
-    font-size: 65px;
+    font-size: 18px;
     color: #191919;
+    p {
+      line-height: 30px;
+    }
 
     &::after {
       content: '';
@@ -787,7 +790,7 @@ header {
   .numberWrap {
     height: 100%;
 
-    .Title {
+    .p {
       padding-bottom: 0;
 
       &::after {
@@ -812,6 +815,39 @@ header {
 
 //FOOTER
 
+.powerby {
+  padding-right: 150px;
+}
+
+@media (max-width: 1300px) {
+  .powerby {
+    padding-right: 100px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .powerbyWrap {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .powerby {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 960px) {
+  .powerbyWrap {
+    justify-content: center;
+  }
+  .powerby {
+    padding-right: 0;
+  }
+}
+
+.footerWrap {
+  align-items: center;
+}
+
 footer {
   color: #787a8d;
   padding: 70px 60px 35px;
@@ -830,6 +866,10 @@ footer {
       line-height: normal;
     }
   }
+}
+
+.footerLogo {
+  padding-right: 18%;
 }
 
 .footerCopy {
@@ -852,6 +892,16 @@ footer {
     flex-wrap: wrap;
     gap: 0;
   }
+
+  .footerWrap {
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  .footerLogo {
+    padding-right: 30px;
+  }
+
 
   .menuItem {
     flex: 0 0 30%;
@@ -877,10 +927,13 @@ footer {
     flex-wrap: wrap;
   }
   .footerLogo {
+
     padding-right: 0;
     padding-bottom: 30px;
   }
 }
+
+
 
 
 
