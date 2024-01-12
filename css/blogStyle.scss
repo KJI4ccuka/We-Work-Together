@@ -167,7 +167,9 @@ header {
 .hamburger-icon {
   display: none;
   cursor: pointer;
-  padding: 10px;
+  padding: 12px 15px;
+  border-radius: 30px;
+  background-color: #1a1b2d;
   position: relative;
   z-index: 2;
 }
@@ -317,8 +319,6 @@ header {
 
 .mainItemWrap {
   display: flex;
-  justify-content: end;
-  padding-right: 0;
 }
 
 .mainItem {
@@ -432,7 +432,6 @@ header {
   .mainText {
     h2 {
       font-size: 32px;
-
     }
 
     h1 {
@@ -480,7 +479,17 @@ header {
 
 
 .blogWrap {
-  padding: 30px 60px 100px;
+  padding: 70px 60px 100px;
+}
+@media(max-width: 1670px) {
+  .blogWrap {
+    padding: 30px 60px 100px;
+  }
+}
+@media(max-width: 1026px) {
+  .blogWrap {
+    padding: 100px 60px 100px;
+  }
 }
 
 .blogItemsWrap1, .blogItemsWrap2 {
@@ -502,7 +511,6 @@ header {
     justify-content: center;
     .lastBlogItem:last-child {
       display: none;
-
     }
   }
 }
@@ -517,7 +525,6 @@ header {
     justify-content: center;
     .lastBlogItem {
       display: flex;
-
     }
   }
 }

@@ -159,7 +159,9 @@ header {
 .hamburger-icon {
   display: none;
   cursor: pointer;
-  padding: 10px;
+  padding: 12px 15px;
+  border-radius: 30px;
+  background-color: #1a1b2d;
   position: relative;
   z-index: 2;
 }
@@ -502,7 +504,7 @@ header {
 }
 
 .contactForm {
-  margin-top: -100px;
+  margin-top: -70px;
   padding-left: 60px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -526,6 +528,16 @@ header {
   background-color: #191919;
 }
 
+@media screen and (max-width: 1600px) {
+  .contactForm {
+    margin-top: -100px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .contactForm {
+    margin-top: -130px;
+  }
+}
 .contactInput {
   display: grid;
   position: relative;
@@ -598,6 +610,7 @@ header {
   max-width: 600px;
   max-height: 700px;
 }
+
 input,
 textarea {
   width: 100%;

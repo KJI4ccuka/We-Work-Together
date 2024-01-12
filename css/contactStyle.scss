@@ -167,10 +167,13 @@ header {
 .hamburger-icon {
   display: none;
   cursor: pointer;
-  padding: 10px;
+  padding: 12px 15px;
+  border-radius: 30px;
+  background-color: #1a1b2d;
   position: relative;
   z-index: 2;
 }
+
 
 .hamburger-icon::before,
 .hamburger-icon::after,
@@ -584,7 +587,7 @@ header {
 //CONTACT
 
 .contactForm {
-  margin-top: -100px;
+  margin-top: -70px;
   padding-left: 60px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -610,6 +613,17 @@ header {
     }
   }
 }
+@media screen and (max-width: 1600px) {
+  .contactForm {
+    margin-top: -100px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .contactForm {
+    margin-top: -130px;
+  }
+}
+
 
 
 .contactInput {
@@ -690,25 +704,17 @@ header {
   background-repeat: no-repeat;
   max-width: 600px;
   max-height: 700px;
-
-
-  @media screen and (max-width: 1300px) {
-  }
-
 }
-
 
 input,
 textarea {
   width: 100%;
 }
 
-
 .contactWrap {
   display: flex;
   justify-content: space-between;
 }
-
 
 @media only screen and (max-width: 1024px) {
 
